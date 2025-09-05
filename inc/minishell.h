@@ -23,6 +23,7 @@
 # include <string.h>
 # include <limits.h>
 # include <errno.h>
+# include <sys/wait.h>
 # include <signal.h>
 
 //TOKENS COMMAND
@@ -103,5 +104,16 @@ typedef struct s_expand
 	int		i; // Iterate over the original string
 	int		j; // Iterate over the expanded string
 } t_expand;
+
+// UTILS -> FREE
+void	pointer_free(void *ptr);
+void	free_env(t_env *env);
+void	free_tabs(char **tab);
+
+// UTILS -> FD
+void	close_fd(int fd);
+void	reset_io(t_MS *MS);
+void	close_more_fds(t_MS *MS);
+void	reset_fds(t_MS *MS);
 
 #endif
