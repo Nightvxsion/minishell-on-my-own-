@@ -57,7 +57,7 @@
 typedef struct s_token
 {
 	char			*name; // cmd to tokenize
-	int				id; // Nº of token
+	int				type; // Nº of token
 	struct s_token	*prev; // Previous cmd
 	struct s_token	*next; // Next cmd
 } t_token;
